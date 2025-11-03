@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeleteWithID</title>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+
+  <body>
+    <h1>Delete User With Email & Password</h1>
+
+    <form action="/delete?_method=DELETE" method="post">
+      <!-- ✅ Email input stays outside the password container -->
+      <input
+        type="email"
+        placeholder="Enter Your emailId"
+        name="email"
+        required
+      />
+
+      <!-- ✅ Only password + toggle text are inside this div -->
+      <div class="Direct-DeleteForm">
+        <input
+          type="password"
+          id="passwordInput"
+          name="password"
+          placeholder="Enter Password"
+          required
+        />
+        <!-- ✅ Added parentheses in onclick -->
+        <span id="toggle-password" onclick="Togggle()">Show</span>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      // ✅ Corrected variable names
+      let toggleButton = document.getElementById("toggle-password");
+      let passwordInput = document.getElementById("passwordInput");
+
+      // ✅ Fixed toggle logic
+      function Togggle() {
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          toggleButton.textContent = "Hide"; // show Hide when visible
+        } else {
+          passwordInput.type = "password";
+          toggleButton.textContent = "Show"; // switch back
+        }
+      }
+    </script>
+  </body>
+</html>

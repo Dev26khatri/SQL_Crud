@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Users</title>
+    <link rel="stylesheet" href="/index.css" />
+    <style>
+      table,
+      tr,
+      th,
+      td {
+        border: 2px solid black;
+        padding: 5px;
+      }
+      th a {
+        display: flex;
+        justify-content: center;
+        padding: 2px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Username</th>
+        <th>
+          <a href="/NewUser">Add</a>
+        </th>
+      </tr>
+      <% for(user of users){ %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.email %></td>
+        <td><%= user.username %></td>
+        <td class="Action-button">
+          <!-- <form action="/user/<%= user.id %>/edit" method="get"> -->
+          <a href="/user/<%= user.id%>/edit"> Edit </a>
+          <!-- </form> -->
+          <!-- <form action="/delete/<%= user.id %>"> -->
+          <a href="/delete/<%= user.id%>"> Delete </a>
+          <!-- </form> -->
+        </td>
+      </tr>
+      <% } %>
+    </table>
+  </body>
+</html>

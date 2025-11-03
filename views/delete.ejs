@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete User</title>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <h1>Delete User</h1>
+    <form method="post" action="/delete?_method=DELETE">
+      <input
+        type="email"
+        name="email"
+        value="<%= user.email %>"
+        placeholder="Enter Your Valid Email..."
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter Valid Password..."
+      />
+      <button>Delete</button>
+    </form>
+  </body>
+</html>
